@@ -2,7 +2,7 @@ import sys
 import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
-from lib import command, require
+from _lib import command, require
 
 def main():
     require(2, "python skill.py <search_term> [search_method]")

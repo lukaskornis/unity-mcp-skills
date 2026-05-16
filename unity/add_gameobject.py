@@ -2,7 +2,7 @@ import sys
 import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
-from lib import command, require
+from _lib import command, require
 
 def main():
     require(5, "python skill.py <name> <x> <y> <z> [primitive_type] [prefab_path] [parent]")

@@ -32,7 +32,8 @@ def command(tool, params):
         result = _post(url, {"type": tool, "params": params})
         inner = result.get("result", {})
         if result.get("status") != "success" or not inner.get("success"):
-            print(f"ERROR: {inner.get('message') or result.get('error', 'Unknown error')}")
+            msg = inner.get("message") or inner.get("error") or inner.get("code") or result.get("error", "Unknown error")
+            print(f"ERROR: {msg}")
             sys.exit(1)
         return inner.get("data")
     except urllib.error.URLError as e:
