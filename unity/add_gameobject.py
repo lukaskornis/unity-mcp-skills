@@ -12,7 +12,7 @@ def main():
         "name": sys.argv[1],
         "position": [float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])],
     }
-    if len(sys.argv) > 5: params["primitive_type"] = sys.argv[5]
+    if len(sys.argv) > 5: params["primitiveType"] = sys.argv[5]
     if len(sys.argv) > 6: params["prefab_path"] = sys.argv[6]
     if len(sys.argv) > 7: params["parent"] = sys.argv[7]
 
