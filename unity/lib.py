@@ -19,6 +19,12 @@ def _post(url, payload):
         return json.loads(resp.read())
 
 
+def require(n, usage):
+    if len(sys.argv) < n:
+        print(f"ERROR: Usage: {usage}")
+        sys.exit(1)
+
+
 def command(tool, params):
     config = _load_config()
     url = f"{config['unity_mcp_url']}/api/command"

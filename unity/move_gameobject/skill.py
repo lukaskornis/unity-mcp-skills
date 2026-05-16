@@ -2,12 +2,10 @@ import sys
 import json
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from lib import command
+from lib import command, require
 
 def main():
-    if len(sys.argv) < 5:
-        print("ERROR: Usage: python skill.py <target> <x> <y> <z> [rx] [ry] [rz] [sx] [sy] [sz]")
-        sys.exit(1)
+    require(5, "python skill.py <target> <x> <y> <z> [rx] [ry] [rz] [sx] [sy] [sz]")
 
     argc = len(sys.argv)
     if argc not in (5, 8, 11):
