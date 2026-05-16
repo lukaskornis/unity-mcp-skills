@@ -9,8 +9,8 @@ def main():
     params = {
         "action": "search",
         "path": sys.argv[1],
-        "page_size": 50,
-        "page_number": int(sys.argv[2]) if len(sys.argv) > 2 else 1,
+        "pageSize": 50,
+        "pageNumber": int(sys.argv[2]) if len(sys.argv) > 2 else 1,
         "generate_preview": False,
     }
     result = command("manage_asset", params)

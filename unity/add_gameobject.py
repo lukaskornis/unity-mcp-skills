@@ -13,7 +13,7 @@ def main():
         "position": [float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])],
     }
     if len(sys.argv) > 5: params["primitiveType"] = sys.argv[5]
-    if len(sys.argv) > 6: params["prefab_path"] = sys.argv[6]
+    if len(sys.argv) > 6: params["prefabPath"] = sys.argv[6]
     if len(sys.argv) > 7: params["parent"] = sys.argv[7]
 
     print(json.dumps(command("manage_gameobject", params), indent=2))
