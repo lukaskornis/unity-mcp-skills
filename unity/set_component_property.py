@@ -1,5 +1,4 @@
 import sys
-import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 from _lib import command, require, coerce
@@ -13,7 +12,8 @@ def main():
         "property": sys.argv[3],
         "value": coerce(sys.argv[4]),
     }
-    print(json.dumps(command("manage_components", params), indent=2))
+    command("manage_components", params)
+    print("ok")
 
 if __name__ == "__main__":
     main()

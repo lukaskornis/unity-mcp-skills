@@ -1,5 +1,4 @@
 import sys
-import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 from _lib import command, require, coerce
@@ -13,12 +12,12 @@ def main():
             sys.exit(1)
         field, _, value = pair.partition("=")
         patches.append({"path": field.strip(), "value": coerce(value.strip())})
-    result = command("manage_scriptable_object", {
+    command("manage_scriptable_object", {
         "action": "modify",
         "target": {"path": sys.argv[1]},
         "patches": patches,
     })
-    print(json.dumps(result, indent=2))
+    print(f"ok {len(patches)} patches")
 
 if __name__ == "__main__":
     main()

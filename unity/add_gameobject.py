@@ -1,12 +1,10 @@
 import sys
-import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 from _lib import command, require
 
 def main():
     require(5, "python skill.py <name> <x> <y> <z> [primitive_type] [prefab_path] [parent]")
-
     params = {
         "action": "create",
         "name": sys.argv[1],
@@ -15,8 +13,8 @@ def main():
     if len(sys.argv) > 5: params["primitiveType"] = sys.argv[5]
     if len(sys.argv) > 6: params["prefabPath"] = sys.argv[6]
     if len(sys.argv) > 7: params["parent"] = sys.argv[7]
-
-    print(json.dumps(command("manage_gameobject", params), indent=2))
+    d = command("manage_gameobject", params)
+    print(f"{d['name']} {d['instanceID']}")
 
 if __name__ == "__main__":
     main()

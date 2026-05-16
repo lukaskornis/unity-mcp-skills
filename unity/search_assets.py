@@ -1,5 +1,4 @@
 import sys
-import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 from _lib import command, require
@@ -13,11 +12,13 @@ def main():
         "pageNumber": int(sys.argv[2]) if len(sys.argv) > 2 else 1,
         "generate_preview": False,
     }
-    result = command("manage_asset", params)
-    print(json.dumps({
-        "totalAssets": result["totalAssets"],
-        "assets": [{"path": a["path"], "name": a["name"], "assetType": a["assetType"], "guid": a["guid"]} for a in result["assets"]],
-    }, indent=2))
+    d = command("manage_asset", params)
+    total = d["totalAssets"]
+    assets = d["assets"]
+    shown = len(assets)
+    print(f"total={total}" + (f" +more" if shown < total else ""))
+    for a in assets:
+        print(f"{a['assetType']} {a['path']}")
 
 if __name__ == "__main__":
     main()

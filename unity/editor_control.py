@@ -1,5 +1,4 @@
 import sys
-import json
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 from _lib import command, require
@@ -12,9 +11,8 @@ def main():
     if action not in VALID:
         print(f"ERROR: action must be one of {sorted(VALID)}")
         sys.exit(1)
-    result = command("manage_editor", {"action": action})
-    # editor actions return no data, just message in inner — print success
-    print(json.dumps({"action": action, "ok": True}, indent=2))
+    command("manage_editor", {"action": action})
+    print(f"ok {action}")
 
 if __name__ == "__main__":
     main()
