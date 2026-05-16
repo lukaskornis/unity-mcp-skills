@@ -16,3 +16,23 @@
 - screenshot: capture the game view to Assets/Screenshots/
 - create_script: create a new C# script file (triggers domain reload)
 - delete_script: move a C# script to trash (DESTRUCTIVE, triggers domain reload)
+- editor_control: play/pause/stop the editor or undo/redo
+- profiler_start: enable Unity profiler, optionally recording to .raw file
+- profiler_stop: disable Unity profiler
+- get_frame_timing: read CPU/GPU frame times (synchronous, no profiler needed)
+- get_counters: read profiler counters by category (Render Memory Scripts Physics)
+- list_packages: list all installed packages (async)
+- search_packages: search Unity registry by keyword (async)
+- install_package: install a package by name, version, git URL, or path (async)
+- remove_package: remove a package (DESTRUCTIVE, async)
+- set_renderer_color: set RGBA color on a GameObject's Renderer
+- search_assets: search project assets by filename pattern and type
+- create_folder: create an asset folder
+- move_asset: move or rename an asset file
+- delete_asset: delete an asset file (DESTRUCTIVE)
+- build_player: start a player build, returns job_id (async)
+- build_status: check build job status or last build result
+- build_settings: read or write build settings (product name, bundle id, etc.)
+- switch_platform: switch active build target platform (slow)
+- create_scriptable_object: create a new ScriptableObject asset by type name
+- modify_scriptable_object: patch ScriptableObject fields by serialized property name
