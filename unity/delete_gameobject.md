@@ -1,4 +1,3 @@
-python skill.py <name>
-name:str
-→ [{name, instanceID}]  # list of deleted objects
+python delete_gameobject.py <name>
+→ [{name, instanceID}]
 ! GameObjectNotFound

@@ -10,12 +10,12 @@ Default URL: `http://localhost:8080` (configured in `config.json`).
 
 ## Available Skills
 
-See `unity/index.md` for the full command list.
+See `unity/_index.md` for the full command list.
 
 ## Usage
 
 ```
-python unity/<skill_name>/skill.py [args]
+python unity/<skill_name>.py [args]
 ```
 
 All scripts print JSON to stdout. Errors are prefixed with `ERROR:` and exit with code 1.

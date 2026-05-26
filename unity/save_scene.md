@@ -1,2 +1,2 @@
-python skill.py
+python save_scene.py
 → path name
